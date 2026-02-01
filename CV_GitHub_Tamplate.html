@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rada Valchanova | CV</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    body, h1, h2, h3, h4, h5, h6 {
+      font-family: "Raleway", sans-serif;
+      color: #2e3440;
+    }
+
+    body { background-color: #f5f6fa; }
+
+    :root {
+      --ink: #1f2937;
+      --muted: #4b5563;
+      --border: #e6e8ef;
+      --panel: #ffffff;
+      --soft: #f6f7ff;
+      --soft2: #eef0fb;
+      --accent: #6f75c9;
+      --shadow: 0 10px 28px rgba(0,0,0,0.06);
+      --r: 16px;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 20px auto 36px auto;
+      padding: 0 16px;
+    }
+
+    /* Save as PDF button */
+    .top-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 10px;
+    }
+
+    .print-btn {
+      border-radius: 999px;
+      background: var(--soft);
+      color: #4c4f69;
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+    }
+
+    .print-btn:hover {
+      background: var(--soft2);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 18px;
+      align-items: stretch; /* match height */
+    }
+
+    .grid > .card { height: 100%; }
+
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+      .grid > .card { height: auto; }
+      .top-actions { justify-content: flex-start; }
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+    }
+
+    .card-pad { padding: 18px; }
+
+    /* Header */
+    .cv-header {
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .cv-name {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 6px 0;
+      color: var(--ink);
+    }
+
+    .cv-title {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .cv-summary {
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 70ch;
+      margin: 0;
+    }
+
+    .mini-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 14px;
+      font-size: 0.95rem;
+    }
+
+    .mini-row a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .mini-row a:hover { text-decoration: underline; }
+
+    /* Sidebar */
+    .side-name {
+      font-weight: 800;
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+
+    .side-role {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .chipbar {
+      background: var(--soft2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 10px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .sec-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: var(--ink);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 14px 0;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--soft);
+      color: #4c4f69;
+    }
+
+    .tag.strong {
+      font-weight: 700;
+      background: rgba(111,117,201,0.12);
+      border-color: rgba(111,117,201,0.25);
+      color: #3f457f;
+    }
+
+    /* Right column */
+    .block { padding: 18px; }
+
+    .entry { padding: 12px 0; }
+    .entry + .entry { border-top: 1px solid var(--border); }
+
+    .entry-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .entry-role {
+      font-weight: 800;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    .entry-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .entry-org {
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .bullets li { margin: 6px 0; }
+
+    /* Print */
+    @media print {
+      body { background: #fff; }
+      .card { box-shadow: none; }
+      .page { max-width: 100%; margin: 0; padding: 0; }
+      .top-actions { display: none; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- Save as PDF -->
+  <div class="top-actions">
+    <button class="print-btn" onclick="window.print()">
+      <i class="fa fa-download" style="margin-right:8px;"></i>Save as PDF
+    </button>
+  </div>
+
+  <!-- Header -->
+  <div class="card cv-header">
+    <div class="cv-name">Rada Valchanova</div>
+    <div class="cv-title">Junior Data Analyst · Data Storytelling &amp; Visualization</div>
+
+    <p class="cv-summary">
+      Junior Data Analyst focused on building clear, practical dashboards and analysis using Excel, SQL,
+      Python, and Power BI. Background in international relations, law, and global governance — strong at
+      translating complex information into structured insights.
+    </p>
+
+    <div class="mini-row">
+      <a href="mailto:valchanovarada@gmail.com">valchanovarada@gmail.com</a>
+      <a href="https://www.linkedin.com/in/rada-valchanova-a6432120a/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <!-- LEFT -->
+    <div class="card">
+      <div class="card-pad">
+
+        <div class="side-name">Profile</div>
+        <div class="side-role">
+          Junior Data Analyst with prior professional experience across governance, legal,
+          and international coordination environments.
+        </div>
+
+        <div class="chipbar">Excel · SQL · Python · Power BI</div>
+
+        <div class="sec-title">Skills</div>
+        <div class="tag-row">
+          <span class="tag strong">Excel</span>
+          <span class="tag">Dashboards</span>
+          <span class="tag">Pivot Tables</span>
+          <span class="tag">KPIs</span>
+        </div>
+        <div class="tag-row" style="margin-top:8px;">
+          <span class="tag strong">SQL</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Joins</span>
+          <span class="tag">Aggregations</span>
+        </div>
+        <div class="tag-row" style="margin-top:8px;">
+          <span class="tag strong">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">EDA</span>
+        </div>
+        <div class="tag-row" style="margin-top:8px;">
+          <span class="tag strong">Power BI</span>
+          <span class="tag">Data Model</span>
+          <span class="tag">Reporting</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="sec-title">Certifications</div>
+        <ul class="bullets">
+          <li><b>IBM Data Analyst Professional Certificate</b> — in progress</li>
+          <li>Operational Research for Humanitarians — University of Geneva</li>
+          <li>Global Program for Changemakers — Humanitarian Affairs Asia</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <div class="sec-title">Education</div>
+        <ul class="bullets">
+          <li><b>BA International Relations</b> — Open University (UK), 2024 – present</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <div class="sec-title">Languages</div>
+        <div class="tag-row">
+          <span class="tag">Bulgarian (Native)</span>
+          <span class="tag">English (Full Professional)</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="card">
+      <div class="block">
+        <div class="sec-title">Work Experience</div>
+
+        <div class="entry">
+          <div class="entry-top">
+            <p class="entry-role">Member, Board of Trustees</p>
+            <div class="entry-meta">Jan 2024 – Present</div>
+          </div>
+          <div class="entry-org">International Planned Parenthood Federation (IPPF)</div>
+          <ul class="bullets">
+            <li>Contribute to governance reform, policy development, and committee-level decision-making.</li>
+            <li>Support structured reporting and synthesis of complex information for executive audiences.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-top">
+            <p class="entry-role">Global Program Associate</p>
+            <div class="entry-meta">Dec 2023 – Aug 2024</div>
+          </div>
+          <div class="entry-org">Humanitarian Affairs Asia</div>
+          <ul class="bullets">
+            <li>Supported research, coordination, and stakeholder engagement for UN-affiliated programs.</li>
+            <li>Worked with structured data, schedules, and documentation across international teams.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-top">
+            <p class="entry-role">Employee Relocation Specialist</p>
+            <div class="entry-meta">Jun 2022 – Oct 2023</div>
+          </div>
+          <div class="entry-org">Musala Soft AD</div>
+          <ul class="bullets">
+            <li>Managed compliance-heavy relocation workflows and documentation for non-EU nationals.</li>
+            <li>Coordinated timelines, approvals, and case tracking with high accuracy requirements.</li>
+          </ul>
+        </div>
+
+        <!-- Legal experience (expanded, correct employers + timeframes) -->
+        <div class="entry">
+          <div class="entry-top">
+            <p class="entry-role">Legal Associate</p>
+            <div class="entry-meta">Sep 2021 – Jun 2022</div>
+          </div>
+          <div class="entry-org">Law Practice “Kisyova, Stamenova, Stoilov &amp; Partners”</div>
+          <ul class="bullets">
+            <li>Prepared and reviewed legal documents ahead of court hearings; supported litigation planning.</li>
+            <li>Coordinated with senior associates and maintained structured case documentation.</li>
+            <li>Supervised junior legal assistants.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-top">
+            <p class="entry-role">Legal Associate</p>
+            <div class="entry-meta">May 2021 – Sep 2021</div>
+          </div>
+          <div class="entry-org">Law Practice “Chatalbashev, Petkova &amp; Ivanova”</div>
+          <ul class="bullets">
+            <li>Conducted in-depth legal research using multiple legal databases and resources.</li>
+            <li>Prepared contracts, pleadings, motions, and legal agreements.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-top">
+            <p class="entry-role">Legal Associate</p>
+            <div class="entry-meta">May 2020 – May 2021</div>
+          </div>
+          <div class="entry-org">Private Enforcement Agent — Stoyan Yakimov</div>
+          <ul class="bullets">
+            <li>Supported enforcement procedures and prepared legal documentation.</li>
+            <li>Handled time-sensitive cases requiring accuracy and compliance.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-top">
+            <p class="entry-role">Legal Intern</p>
+            <div class="entry-meta">Jan 2020 – May 2020</div>
+          </div>
+          <div class="entry-org">Law Practice “Popova &amp; Kaloyanov”</div>
+          <ul class="bullets">
+            <li>Assisted with legal research, document drafting, and case preparation.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
